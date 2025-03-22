@@ -1,4 +1,5 @@
-import { pgClient } from '../../config/db.js';
+import { pgClient } from "../../config/db";
+
 
 export async function getCutomers() {
   const result = await pgClient.query('select * from customer');
