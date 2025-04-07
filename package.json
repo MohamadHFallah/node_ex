@@ -14,6 +14,7 @@
   "author": "fallah.dellche@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^6.5.0",
     "@types/pg": "^8.11.11",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
@@ -26,6 +27,7 @@
     "@typescript-eslint/eslint-plugin": "^8.26.1",
     "@typescript-eslint/parser": "^8.26.1",
     "eslint": "^9.22.0",
+    "prisma": "^6.5.0",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2"

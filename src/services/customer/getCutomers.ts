@@ -1,7 +1,8 @@
-import { pgClient } from "../../config/db";
+// import { pgClient } from "../../config/db";
 
+import { prisma } from '../../config/db';
 
 export async function getCutomers() {
-  const result = await pgClient.query('select * from customer');
-  return result.rows;
+  const customers = await prisma.customer.findMany();
+  return customers;
 }

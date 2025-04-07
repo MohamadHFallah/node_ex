@@ -1,13 +1,8 @@
-import { pgClient } from "../../config/db";
+// import { pgClient } from "../../config/db";
 
+import { prisma } from '../../config/db';
 
-
-export async function getCutomer(customerId:string) {
-  if (customerId) {
-    const result = await pgClient.query('select * from customer where id=$1', [
-      customerId,
-    ]);
-    return result.rows[0];
-  }
-  return null;
+export async function getCutomer(customerId: string) {
+  const result = await prisma.customer.findMany();
+  return result;
 }

@@ -1,9 +1,10 @@
 import { Request } from 'express';
 import z, { ZodError } from 'zod';
 
-const zodValidator = (schema: z.Schema) => (req: Request, res, next) => {
-  try {
+const zodValidator = (schema: z.Schema) => (req: Request, res, next) => {  
+  try {    
     req.body = schema.parse(req.body);
+    next()
   } catch (error) {
     if (error instanceof ZodError) {
         return res.status(400).json({ errors: error.errors });
